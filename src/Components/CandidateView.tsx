@@ -4,7 +4,7 @@ import data from '../data';
 
 export const CandidateView = () => {
   return (
-    <div className="w-full h-[20rem] bg-green-500 border-solid border-2 border-emerald-400 relative">
+    <div className="w-full md:h-[20rem] h-[14rem] bg-green-500 border-solid border-2 border-emerald-400 relative">
       <Image
         src="/assets/profile.jpeg"
         fill
