@@ -39,7 +39,7 @@ export const Header = () => {
             <div
               className={
                 nav
-                  ? 'fixed right-2 top-0 w-[60%] h-full py-4 ease-in-out bg-white transition delay-200 duration-500'
+                  ? 'fixed right-2 top-0 w-[60%] h-full py-4 ease-in-out bg-white transition  delay-200 duration-500'
                   : 'ease-in-out duration-500 fixed right-[-100%]'
               }
             >
@@ -51,7 +51,7 @@ export const Header = () => {
                   className="flex justify-end  hover:bg-gray-200 "
                 />
               </div>
-              <div className="my-8 flex flex-col gap-">
+              <div className="my-8 flex flex-col gap-2">
                 {' '}
                 <Link
                   onClick={handleNav}
