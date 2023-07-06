@@ -37,7 +37,7 @@ const CandidateCard = ({ src, name, level, dept }: CandidateProps) => {
           alt="candidate image"
         />
       </Link>
-      <div className="p-2 md:flex md:flex-col items-center hidden absolute bottom-0 bg-gray-500  ">
+      <div className="p-2 md:flex md:flex-col items-center hidden absolute bottom-0 bg-gray-500 translate-x-[25%] ">
         <Link href="#">
           <h5 className="mb-2  font-bold text-gray-900 dark:text-white">
             {name}
