@@ -85,10 +85,10 @@ export const Header = () => {
         </div>
 
         <div className=" items-center hidden md:flex w-2/5  justify-between ">
-          <Link href={''} className="text-slate-900">
+          <Link href="/" className="text-slate-900">
             Home
           </Link>
-          <Link href={''} className="text-slate-900">
+          <Link href="/#about" className="text-slate-900">
             About
           </Link>
           <Link href={''} className="text-slate-900">

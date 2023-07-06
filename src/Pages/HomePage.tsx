@@ -1,6 +1,7 @@
 import React from 'react';
 import { HeroSection } from '../Components/HeroSection';
 import { CandidateView } from '../Components/CandidateView';
+import About from '../Components/About';
 
 export const Homepage = () => {
   return (
@@ -12,6 +13,7 @@ export const Homepage = () => {
           <CandidateView />
         </div>
       </div>
+      <About />
     </main>
   );
 };
