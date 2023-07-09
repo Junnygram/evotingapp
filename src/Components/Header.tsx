@@ -6,6 +6,23 @@ import Link from 'next/link';
 import { AiOutlineMenu, AiOutlineClose, AiFillHome } from 'react-icons/ai';
 import { FcAbout } from 'react-icons/fc';
 import { BsFillPersonFill } from 'react-icons/bs';
+import { usePathname } from 'next/navigation';
+
+export const MenuItems = ({ name, url }: { name: string; url: string }) => {
+  const pathname = usePathname();
+  console.log(pathname);
+  return (
+    <Link href={url} passHref>
+      <div
+        className={`text-slate-950 hover:text-[#d8a642] ${
+          pathname == url && 'text-[#d8a642]'
+        }`}
+      >
+        {name}
+      </div>
+    </Link>
+  );
+};
 
 export const Header = () => {
   const [nav, setNav] = useState(false);
@@ -63,7 +80,7 @@ export const Header = () => {
                 </Link>
                 <Link
                   onClick={handleNav}
-                  href="#main"
+                  href="/about"
                   className="w-[75%] mx-auto flex justify-center items-center rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-200"
                 >
                   <FcAbout size={20} />
@@ -85,15 +102,9 @@ export const Header = () => {
         </div>
 
         <div className=" items-center hidden md:flex w-2/5  justify-between ">
-          <Link href="/" className="text-slate-900">
-            Home
-          </Link>
-          <Link href="/#about" className="text-slate-900">
-            About
-          </Link>
-          <Link href={''} className="text-slate-900">
-            Candidates
-          </Link>
+          <MenuItems name="Home" url="/" />
+          <MenuItems name="About" url="/about" />
+          <MenuItems name="Candidates" url="/candidates" />
         </div>
       </div>
     </div>

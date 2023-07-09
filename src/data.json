@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "name": "Olaleye Oye",
+    "level": "400 Level",
+    "dept": " Physics  Science",
+    "post": "President",
+    "img": "/assets/candidate1.jpeg"
+  },
+  {
+    "id": 2,
+    "name": "koko Steph",
+    "level": "400 Level",
+    "dept": " Chemistry",
+    "post": "President",
+    "img": "/assets/candidate2.jpeg"
+  },
+  {
+    "id": 3,
+    "name": "Temi Designs",
+    "level": "400 Level",
+    "dept": " Art",
+    "post": "President",
+    "img": "/assets/candidate3.jpeg"
+  },
+  {
+    "id": 4,
+    "name": "Temi Designs",
+    "level": "400 Level",
+    "dept": " commercial ",
+    "post": "President",
+    "img": "/assets/candidate4.jpeg"
+  }
+]
