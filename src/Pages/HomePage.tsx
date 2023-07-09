@@ -12,7 +12,7 @@ export const Homepage = () => {
         <h2 className="text-center my-8 text-black text-4xl font-semibold">
           Candidate Gallery
         </h2>
-        <div className="grid  grid-cols-2 gap-8 py-10 w-4/5 mx-auto">
+        <div className="grid  md:grid-cols-3 grid-cols-2 gap-8 py-10 w-4/5 mx-auto">
           <SingleCandidateTag data={data} post="SUG President" />
           <SingleCandidateTag data={data} post="Vice President" />
           <SingleCandidateTag data={data} post="Fin Secretary" />
