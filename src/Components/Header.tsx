@@ -10,12 +10,12 @@ import { usePathname } from 'next/navigation';
 
 export const MenuItems = ({ name, url }: { name: string; url: string }) => {
   const pathname = usePathname();
-  console.log(pathname);
+  //console.log(pathname);
   return (
     <Link href={url} passHref>
       <div
-        className={`text-slate-950 hover:text-[#d8a642] ${
-          pathname == url && 'text-[#d8a642]'
+        className={` hover:text-[#d8a642] ${
+          pathname == url ? 'text-[#d8a642]' : 'text-slate-950'
         }`}
       >
         {name}
@@ -72,7 +72,7 @@ export const Header = () => {
                 {' '}
                 <Link
                   onClick={handleNav}
-                  href="#main"
+                  href="/"
                   className="w-[75%] mx-auto flex justify-center items-center rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-200"
                 >
                   <AiFillHome size={20} />
@@ -88,7 +88,7 @@ export const Header = () => {
                 </Link>
                 <Link
                   onClick={handleNav}
-                  href="#main"
+                  href="/candidate"
                   className="w-[75%] flex mx-auto justify-center items-center rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-200"
                 >
                   <BsFillPersonFill size={20} />
