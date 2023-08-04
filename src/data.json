@@ -12,7 +12,7 @@
     "name": "koko Steph",
     "level": "400 Level",
     "dept": " Chemistry",
-    "position": "President",
+    "position": "SUG President",
     "img": "/assets/candidate2.jpeg"
   },
   {
@@ -37,7 +37,7 @@
     "level": "400 Level",
     "dept": " Physics  Science",
     "position": "Fin Secretary",
-    "img": "/assets/candidate1.jpeg"
+    "img": "/assets/cv1.jpeg"
   },
   {
     "id": 6,
@@ -45,7 +45,7 @@
     "level": "400 Level",
     "dept": " Chemistry",
     "position": "Fin Secretary",
-    "img": "/assets/candidate2.jpeg"
+    "img": "/assets/cv2.jpeg"
   },
   {
     "id": 7,
@@ -53,7 +53,7 @@
     "level": "400 Level",
     "dept": " Art",
     "position": "Gen Secretary",
-    "img": "/assets/candidate3.jpeg"
+    "img": "/assets/cv3.jpeg"
   },
   {
     "id": 8,
@@ -61,7 +61,7 @@
     "level": "400 Level",
     "dept": " commercial ",
     "position": "Gen Secretary",
-    "img": "/assets/candidate4.jpeg"
+    "img": "/assets/cv4.jpeg"
   },
   {
     "id": 7,
