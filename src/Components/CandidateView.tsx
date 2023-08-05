@@ -15,6 +15,9 @@ export const CandidateView = ({ data }: { data: any }) => {
         <div className="text-gray-950">{data.name}</div>
         <div className="text-gray-950">{data.level} Level</div>
         <div className="text-gray-950">{data.dept}</div>
+        {/* <button className="w-3/4 flex justify-center  mx-auto bg-slate-200 border-2 border-black hover:bg-gray-600">
+          view profile
+        </button> */}
       </div>
     </div>
   );
