@@ -1,8 +1,10 @@
+'use client';
+import CandidateProfile from '@/src/Components/CandidateProfile';
 import Candidates from '@/src/Pages/Candidates';
 import React from 'react';
 
 const page = () => {
-  return <div>{/* <Candidates /> */}</div>;
+  return <Candidates />;
 };
 
 export default page;

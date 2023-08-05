@@ -61,12 +61,12 @@ const CandidateProfile = ({
           <div className="flex justify-between gap-4">
             <a
               href="/viewprofile"
-              className="flex justify-center items-center px-3 py-2 text-sm font-medium w-1/2 text-white bg-gray-300 rounded-lg dark:bg-gray-700 dark:hover:bg-black"
+              className="flex justify-center items-center px-3 py-2 text-sm font-medium w-1/2 text-white bg-gray-500 rounded-lg "
             >
               View Profile
             </a>
             <button
-              className="flex justify-center items-center px-3 py-2 text-sm font-medium w-1/2 text-white bg-gray-300 rounded-lg dark:bg-gray-700 dark:hover:bg-black"
+              className="flex justify-center items-center px-3 py-2 text-sm font-medium w-1/2 text-white bg-gray-500 rounded-lg "
               onClick={handleVoteClick}
               disabled={isButtonDisabled}
             >

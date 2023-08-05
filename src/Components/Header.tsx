@@ -33,7 +33,7 @@ export const Header = () => {
     setNav(!nav);
   };
   return (
-    <div className="h-16 ">
+    <div className="h-16 border-b-2 ">
       <div className="flex w-4/5 mx-auto justify-between items-center h-full">
         <div className="w-8">
           <Image src="/assets/sug.jpeg" width={200} height={100} alt="Logo" />
