@@ -31,13 +31,13 @@ const CandidateProfile = ({
 
   return (
     <div>
-      <div className="max-w-sm my-6 mx-7 bg-white border border-gray-200 rounded-lg shadow dark:bg-White dark:border-gray-700">
+      <div className="max-w-sm my-6 mx-7 border  border-gray-200 rounded-lg shadow dark:bg-White dark:border-gray-700 ">
         <div className="w-full p-6 bg-white shadow-md lg:max-w-xl">
-          <h1 className="text-3xl font-bold text-center text-black">
+          <h1 className="lg:text-3xl md:text-2xl font-bold text-center text-black">
             {postTitle}
           </h1>
         </div>
-        <div className="h-[20rem] overflow-hidden">
+        <div className="h-[10rem] overflow-hidden">
           <Image
             className="w-full h-full object-cover"
             src={img}
@@ -46,27 +46,24 @@ const CandidateProfile = ({
             alt=""
           />
         </div>
-        <div className="p-5">
+        <div className="p-5 text-center">
           <a href="#">
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-black">
               {name}
             </h5>
           </a>
-          <p className="mb-2 font-normal text-gray-700 dark:text-black">
-            {level} Level
-          </p>
-          <p className="mb-2 font-normal text-gray-700 dark:text-black">
-            {dept}
-          </p>
-          <div className="flex justify-between gap-4">
+          <p className="mb-2 font-normal text-gray-700 ">{level} Level</p>
+          <p className="mb-2 font-normal text-gray-700 ">{dept}</p>
+          <div className="grid grid-cols-1 md:grid-cols-2  md:justify-between gap-2 md:gap-4">
             <a
               href="/viewprofile"
-              className="flex justify-center items-center px-3 py-2 text-sm font-medium w-1/2 text-white bg-gray-500 rounded-lg "
+              className=" w-full justify-center  items-center text-center px-3 py-2 text-sm font-medium  text-white bg-gray-500 rounded-lg "
             >
               View Profile
             </a>
+
             <button
-              className="flex justify-center items-center px-3 py-2 text-sm font-medium w-1/2 text-white bg-gray-500 rounded-lg "
+              className=" justify-center items-center px-3 py-2 text-sm font-medium  text-white bg-gray-500 rounded-lg  w-full"
               onClick={handleVoteClick}
               disabled={isButtonDisabled}
             >

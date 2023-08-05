@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Olaleye Oye",
     "level": "400 Level",
-    "dept": " Physics  Science",
+    "dept": " Physics  ",
     "position": "SUG President",
     "img": "/assets/candidate1.jpeg"
   },
@@ -35,7 +35,7 @@
     "id": 5,
     "name": "Olaleye Oye",
     "level": "400 Level",
-    "dept": " Physics  Science",
+    "dept": " Physics  ",
     "position": "Fin Secretary",
     "img": "/assets/cv1.jpeg"
   },
@@ -83,7 +83,7 @@
     "id": 9,
     "name": "Olaleye Oye",
     "level": "400 Level",
-    "dept": " Physics  Science",
+    "dept": " Physics  ",
     "position": "Treasurer",
     "img": "/assets/candidate1.jpeg"
   },
