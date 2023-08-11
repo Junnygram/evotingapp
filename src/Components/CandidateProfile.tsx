@@ -1,7 +1,10 @@
 'use client';
 import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+import data from '../utils/data.json';
 interface Icandidate {
+  id: number;
   postTitle: string;
   img: string;
   name: string;
@@ -12,6 +15,7 @@ interface Icandidate {
 }
 
 const CandidateProfile = ({
+  id,
   postTitle,
   img,
   name,
@@ -55,15 +59,15 @@ const CandidateProfile = ({
           <p className="mb-2 font-normal text-gray-700 ">{level} Level</p>
           <p className="mb-2 font-normal text-gray-700 ">{dept}</p>
           <div className="grid grid-cols-1 md:grid-cols-2  md:justify-between gap-2 md:gap-4">
-            <a
-              href="/viewprofile"
-              className=" w-full justify-center  items-center text-center px-3 py-2 text-sm font-medium  text-white bg-gray-500 rounded-lg "
+            <Link
+              href={`/candidateinfo/${id}`}
+              className="hover:bg-black hover:text-white  w-full justify-center  items-center text-center px-3 py-2 text-sm font-medium  text-white bg-gray-500 rounded-lg "
             >
               View Profile
-            </a>
+            </Link>
 
             <button
-              className=" justify-center items-center px-3 py-2 text-sm font-medium  text-white bg-gray-500 rounded-lg  w-full"
+              className=" hover:bg-black hover:text-white justify-center items-center px-3 py-2 text-sm font-medium  text-white bg-gray-500 rounded-lg  w-full"
               onClick={handleVoteClick}
               disabled={isButtonDisabled}
             >

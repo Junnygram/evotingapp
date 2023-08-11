@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 
-const ViewProfile = () => {
+const ViewProfile = ({ src, name, position, level }: any) => {
   const [voted, setVoted] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const handleVoteClick = () => {
@@ -26,18 +26,18 @@ const ViewProfile = () => {
                 <div className="mt-4 mr-auto mb-4 ml-auto items-left bg-white max-w-lg">
                   <div className="flex flex-col items-left pt-6 pr-6 pb-6 pl-6">
                     <Image
-                      src="/assets/cv1.jpeg"
+                      src={src}
                       width={24}
                       height={24}
                       className="rounded-full w-16 h-16"
                       alt={''}
                     />
                     <p className="mt-10 text-2xl font-semibold leading-none text-black tracking-tighter lg:text-3xl">
-                      David Adeleke
+                      {name}
                     </p>
 
                     <h3 className="fas fa-briefcase mr-2 text-semibold text-lg text-black">
-                      SUG President
+                      {position}
                     </h3>
 
                     <h3 className="fas fa-briefcase mr-2 text-semibold text-lg text-black">
@@ -45,7 +45,7 @@ const ViewProfile = () => {
                     </h3>
 
                     <h3 className="fas fa-briefcase mr-2 text-bold text-lg text-black">
-                      500 Level
+                      {level}
                     </h3>
 
                     <div className=" mt-10 text-lg font-semibold leading-none text-black tracking-tighter lg:text-lg mb-2 text-blueGray-600">
@@ -62,23 +62,7 @@ const ViewProfile = () => {
                       understanding of the evolving landscape of higher
                       education. Education and Professional Background: I am a
                       500 Level student studing Petroleum Engineering. I have
-                      dedicated my career to the advancement of academia. I have
-                      served as a department president in the Department of
-                      Engineering at the University Of Bells for 5 years, I have
-                      been widely recognized for my teaching, leadership and
-                      research contributions. My extensive experience in the
-                      classroom has provided me with a unique perspective on the
-                      needs and aspirations of both faculty and students.
-                      Leadership and Administrative Experience: Throughout my
-                      career, I demonstrated exemplary leadership skills and has
-                      held several administrative roles within the university.
-                      As the president of the Department of engineering, I have
-                      successfully implemented innovative programs to enhance
-                      student engagement, fostered collaborative research
-                      initiatives, and actively promoted diversity and inclusion
-                      within the department. I have also served as a member of
-                      various university-wide committees, where I advocated for
-                      student-centered policies and initiatives.
+                      dedicated my career to the advancement of academia.
                     </p>
                     <div className=" mt-10 text-lg font-semibold leading-none text-black tracking-tighter lg:text-lg mb-2 text-blueGray-600">
                       <h2 className="fas fa-university mr-2 text-lg text-blueGray-400"></h2>
@@ -113,19 +97,7 @@ const ViewProfile = () => {
                       I would implement policies and initiatives that promote
                       diversity at all levels of the university and ensure equal
                       opportunities for students and faculty from all
-                      backgrounds. 4. Community Outreach and Partnerships: I
-                      believe in the transformative power of community
-                      engagement. I intends to forge strong partnerships with
-                      local businesses, government agencies, and nonprofit
-                      organizations to provide students with real-world learning
-                      experiences and create mutually beneficial opportunities
-                      for collaboration and community impact. With her
-                      unwavering commitment to academic excellence, innovative
-                      thinking, and inclusive leadership, I stand as a
-                      formidable candidate for the position of SUG President at
-                      the University Of Bells. My vision, experience, and
-                      dedication will make me capable and an inspiring leader
-                      who can guide the university towards a promising future.
+                      backgrounds.
                     </p>
 
                     <div className="w-full gap-4 mt-6 flex justify-between">

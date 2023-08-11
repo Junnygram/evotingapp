@@ -2,7 +2,7 @@ import React from 'react';
 import { HeroSection } from '../Components/HeroSection';
 import { SingleCandidateTag } from '../Components/SingleCandidate';
 import About from '../Components/About';
-import data from '../utils/data.json';
+import data from '../../utils/data.json';
 
 export const Homepage = () => {
   return (

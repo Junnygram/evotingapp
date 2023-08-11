@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import data from '../utils/data.json';
+import data from '../../utils/data.json';
 import CandidateProfile from '../Components/CandidateProfile';
 
 // async function getData() {
@@ -22,12 +22,12 @@ const Candidates = () => {
   const [showModal, setShowModal] = useState(false);
   console.log({ data });
 
-  console.log({ data });
   return (
     <div className="w-[90%] mx-auto grid grid-cols-2 sm:grid-cols-3 gap-2 py-8">
       {data.map((x: any, i: any) => (
         <CandidateProfile
           key={i}
+          id={x.id}
           postTitle={x.position}
           img={x.img}
           name={x.name}
