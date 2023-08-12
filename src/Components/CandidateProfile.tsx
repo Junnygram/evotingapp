@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import data from '../utils/data.json';
+
 interface Icandidate {
   id: number;
   postTitle: string;
@@ -37,7 +37,11 @@ const CandidateProfile = ({
     <div>
       <div className="max-w-sm my-6 mx-2 border  border-gray-200 rounded-lg shadow dark:bg-White dark:border-gray-700 ">
         <div className="w-full p-6 bg-white shadow-md lg:max-w-xl">
-          <h1 className="lg:text-3xl md:text-2xl font-bold text-center text-black">
+          <h1
+            className="lg:text-3xl md:text-2xl font-bold text-center text-black"
+            data-aos="fade-down"
+            data-aos-delay="400"
+          >
             {postTitle}
           </h1>
         </div>

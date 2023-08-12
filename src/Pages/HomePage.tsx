@@ -9,7 +9,11 @@ export const Homepage = () => {
     <main className="bg-white min-h-screen">
       <HeroSection />
       <div className="mt-[4rem]">
-        <h2 className="text-center my-8 text-black text-4xl font-semibold">
+        <h2
+          className="text-center my-8 text-black text-4xl font-semibold"
+          data-aos="fade-right"
+          data-aos-delay="400"
+        >
           Candidate Gallery
         </h2>
         <div className="grid  md:grid-cols-3 grid-cols-2 gap-8 py-10 w-4/5 mx-auto">
