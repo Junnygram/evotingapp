@@ -6,7 +6,6 @@ import { useRouter } from 'next/router';
 export default function Page({ params: { id } }: any) {
   const candidate = data.find((x) => x.id === Number(id));
   console.log(candidate);
-  //const candidate = data.find((x) => x.id === Number(id));
   if (!candidate) {
     return (
       <div className="flex items-center justify-center h-screen">

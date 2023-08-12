@@ -30,7 +30,7 @@ export const Homepage = () => {
             post="Gen Secretary"
           />
           <SingleCandidateTag
-            data={data.filter((x: any) => x.position == 'Social Secretary')}
+            data={data.filter((x: any) => x.position == 'Soc. Secretary')}
             post="Social Secretary"
           />
           <SingleCandidateTag

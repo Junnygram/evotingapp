@@ -35,7 +35,7 @@ const CandidateProfile = ({
 
   return (
     <div>
-      <div className="max-w-sm my-6 mx-7 border  border-gray-200 rounded-lg shadow dark:bg-White dark:border-gray-700 ">
+      <div className="max-w-sm my-6 mx-2 border  border-gray-200 rounded-lg shadow dark:bg-White dark:border-gray-700 ">
         <div className="w-full p-6 bg-white shadow-md lg:max-w-xl">
           <h1 className="lg:text-3xl md:text-2xl font-bold text-center text-black">
             {postTitle}
@@ -43,7 +43,7 @@ const CandidateProfile = ({
         </div>
         <div className="h-[10rem] overflow-hidden">
           <Image
-            className="w-full h-full object-cover"
+            className="w-full h-full object-fit"
             src={img}
             width={500}
             height={500}
@@ -56,7 +56,7 @@ const CandidateProfile = ({
               {name}
             </h5>
           </a>
-          <p className="mb-2 font-normal text-gray-700 ">{level} Level</p>
+          <p className="mb-2 font-normal text-gray-700 ">{level}</p>
           <p className="mb-2 font-normal text-gray-700 ">{dept}</p>
           <div className="grid grid-cols-1 md:grid-cols-2  md:justify-between gap-2 md:gap-4">
             <Link
