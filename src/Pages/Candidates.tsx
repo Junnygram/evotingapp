@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import data from '../../utils/data.json';
 import CandidateProfile from '../Components/CandidateProfile';
-
+import SearchInput from '../Components/SearchInput';
 // async function getData() {
 //   try {
 //     const res = await fetch(
@@ -19,24 +19,34 @@ import CandidateProfile from '../Components/CandidateProfile';
 // }
 
 const Candidates = () => {
+  const handleSearch = (query: string) => {
+    // Implement your search logic here
+    console.log('Search query:', query);
+    // For example, you could fetch search results from an API based on the query
+  };
   const [showModal, setShowModal] = useState(false);
   console.log({ data });
 
   return (
-    <div className="w-[90%] mx-auto grid grid-cols-2 sm:grid-cols-3 gap-2 py-8">
-      {data.map((x: any, i: any) => (
-        <CandidateProfile
-          key={i}
-          id={x.id}
-          postTitle={x.position}
-          img={x.img}
-          name={x.name}
-          level={x.level}
-          dept={x.dept}
-          showModal={showModal}
-          setShowModal={setShowModal}
-        />
-      ))}
+    <div>
+      <div className="w-[90%] mx-auto mt-4">
+        <SearchInput />
+      </div>
+      <div className="w-[90%] mx-auto grid md:grid-cols-3 grid-cols-2 gap-2 py-4">
+        {data.map((x: any, i: any) => (
+          <CandidateProfile
+            key={i}
+            id={x.id}
+            postTitle={x.position}
+            img={x.img}
+            name={x.name}
+            level={x.level}
+            dept={x.dept}
+            showModal={showModal}
+            setShowModal={setShowModal}
+          />
+        ))}
+      </div>
     </div>
   );
 };
