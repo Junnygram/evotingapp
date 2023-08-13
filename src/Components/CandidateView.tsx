@@ -8,6 +8,7 @@ export const CandidateView = ({ data }: { data: any }) => {
       <Image
         src={data.img}
         fill={true}
+        sizes="100"
         alt="candidate image"
         className="w-full h-auto object-cover"
       />

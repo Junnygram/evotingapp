@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import data from '../../utils/data.json';
 import CandidateProfile from '../Components/CandidateProfile';
-import SearchInput from '../Components/SearchInput';
+// import SearchInput from '../Components/SearchInput';
 // async function getData() {
 //   try {
 //     const res = await fetch(
@@ -19,6 +19,7 @@ import SearchInput from '../Components/SearchInput';
 // }
 
 const Candidates = () => {
+  const [candidates, setCandidates] = useState();
   const handleSearch = (query: string) => {
     // Implement your search logic here
     console.log('Search query:', query);
@@ -27,11 +28,22 @@ const Candidates = () => {
   const [showModal, setShowModal] = useState(false);
   console.log({ data });
 
+  // //filter by position function
+  //   const filterByPosition = (position : any) => {
+  //     if (position === ""){
+  //       setCandidates(data);
+  //       return;
+  //     }
+  //     if (position == true) {
+  //       const positionCandidate : any  = data.filter((x) => x.position === position)
+  //       setCandidates(positionCandidate );
+  //       return;
+  //   }
+  // }
+
   return (
     <div>
-      <div className="w-[90%] mx-auto mt-4">
-        <SearchInput />
-      </div>
+      <div className="w-[90%] mx-auto mt-4">{/* <SearchInput /> */}</div>
       <div className="w-[90%] mx-auto grid md:grid-cols-3 grid-cols-2 gap-2 py-4">
         {data.map((x: any, i: any) => (
           <CandidateProfile
@@ -50,5 +62,4 @@ const Candidates = () => {
     </div>
   );
 };
-
 export default Candidates;

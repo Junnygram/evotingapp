@@ -7,8 +7,8 @@ export const HeroSection = () => {
   return (
     <div className="h-[40vh] md:h-[70vh] bg-gray-950 text-white font-bold flex items-center ">
       <div className="w-4/5 mx-auto text-5xl flex  ">
-        <div className="w-2/4 my-auto text-2xl md:text-5xl   leading-relaxed">
-          Welcome to Harmonics SUG E-voting Portal.
+        <div className="w-2/4 my-auto text-xl md:text-5xl   leading-relaxed">
+          Welcome to SUG E-voting Portal.
           <div className="text-green-400 md:visible ">
             <h1>where your voice</h1>
             <TypeAnimation
@@ -31,7 +31,7 @@ export const HeroSection = () => {
             src="/assets/voting1.jpeg"
             width={200}
             height={100}
-            className="h-full w-full "
+            className="h-auto w-auto "
           />
         </div>
       </div>

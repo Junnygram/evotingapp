@@ -58,7 +58,7 @@ export const Header = () => {
             <div
               className={
                 nav
-                  ? 'fixed z-10 right-2 bg-slate-400 top-0 w-[60%] h-screen py-4 ease-in-out  transition  delay-200 duration-500'
+                  ? 'fixed z-10 right-2 bg-slate-400 top-0 w-[60%] h-screen py-4 ease-in-out  transition  delay-200 duration-500 mr-[-12px]'
                   : 'ease-in-out duration-500 fixed right-[-100%]'
               }
             >
