@@ -13,10 +13,13 @@ export default function Home() {
 //   await db.connect();
 //   try {
 //     const candidates = await Candidate.find().lean();
-//     const plainCandidates = candidates.map((candidate) => candidate.toObject());
+//     // Apply convertDocToObj function to each candidate
+//     const convertedCandidates = candidates.map(db.convertDocToObj);
+//     console.log(convertedCandidates);
+
 //     return {
 //       props: {
-//         candidates: plainCandidates,
+//         candidates: convertedCandidates,
 //       },
 //     };
 //   } catch (error) {
