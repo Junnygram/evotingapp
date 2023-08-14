@@ -27,6 +27,12 @@ export const MenuItems = ({ name, url }: { name: string; url: string }) => {
 };
 
 export const Header = () => {
+  const navlinks = [
+    { label: 'Home', href: '/' },
+    { label: 'About', href: '/about' },
+    { label: 'Candidates', href: 'candidates' },
+    { label: 'Login', href: 'login' },
+  ];
   const [nav, setNav] = useState(false);
 
   const handleNav = () => {
@@ -43,11 +49,6 @@ export const Header = () => {
           {nav ? (
             ''
           ) : (
-            // <AiOutlineClose
-            //   size={25}
-            //   onClick={handleNav}
-            //   className="flex justify-end "
-            // />
             <AiOutlineMenu
               size={25}
               onClick={handleNav}
@@ -70,40 +71,20 @@ export const Header = () => {
                   className="flex justify-end  hover:bg-gray-200 "
                 />
               </div>
+
               <div className="my-8 flex flex-col gap-2">
-                {' '}
-                <Link
-                  onClick={handleNav}
-                  href="/"
-                  className="w-[75%] mx-auto flex justify-center items-center rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-200"
-                >
-                  <AiFillHome size={20} />
-                  <span className="pl-4 ">Home</span>
-                </Link>
-                <Link
-                  onClick={handleNav}
-                  href="/about"
-                  className="w-[75%] mx-auto flex justify-center items-center rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-200"
-                >
-                  <FcAbout size={20} />
-                  <span className="pl-4">About</span>
-                </Link>
-                <Link
-                  onClick={handleNav}
-                  href="/candidates"
-                  className="w-[75%] flex mx-auto justify-center items-center rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-200"
-                >
-                  <BsFillPersonFill size={20} />
-                  <span className="pl-4">Candidates</span>
-                </Link>
-                <Link
-                  onClick={handleNav}
-                  href="/login"
-                  className="w-[75%] flex mx-auto justify-center items-center rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-200"
-                >
-                  <BiLogIn size={20} />
-                  <span className="pl-4">Login</span>
-                </Link>
+                {navlinks.map((x, i) => (
+                  <div key={i}>
+                    <Link
+                      onClick={handleNav}
+                      href={x.href}
+                      className="w-[75%] mx-auto flex justify-center items-center rounded-full shadow-lg bg-gray-100 shadow-gray-400 m-2 p-4 cursor-pointer hover:scale-110 ease-in duration-200"
+                    >
+                      <AiFillHome size={20} />
+                      <span className="pl-4 ">{x.label}</span>
+                    </Link>
+                  </div>
+                ))}
               </div>
             </div>
           ) : (
@@ -112,10 +93,11 @@ export const Header = () => {
         </div>
 
         <div className=" items-center hidden md:flex w-2/5  justify-between  ">
-          <MenuItems name="Home" url="/" />
-          <MenuItems name="About" url="/about" />
-          <MenuItems name="Candidates" url="/candidates" />
-          <MenuItems name="Login" url="/login" />
+          {navlinks.map((x, i) => (
+            <div key={i}>
+              <MenuItems name={x.label} url={x.href} />
+            </div>
+          ))}
         </div>
       </div>
     </div>
