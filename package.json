@@ -23,6 +23,7 @@
     "eslint-config-next": "13.4.8",
     "mongoose": "^7.4.3",
     "next": "13.4.8",
+    "next-auth": "^4.23.0",
     "postcss": "8.4.24",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -35,10 +36,12 @@
     "slick-carousel": "^1.8.1",
     "tailwindcss": "3.3.2",
     "typescript": "5.1.6",
-    "yup": "^1.2.0"
+    "yup": "^1.2.0",
+    "yup-password": "^0.2.2"
   },
   "devDependencies": {
     "@types/aos": "^3.0.4",
+    "@types/bcryptjs": "^2.4.2",
     "prisma": "^5.1.1"
   }
 }
