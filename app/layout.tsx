@@ -3,7 +3,8 @@ import './globals.css';
 import { Inter } from 'next/font/google';
 import Footer from '@/src/Components/Footer';
 import { AOSInit } from '@/utils/aos';
-
+import Provider from '../app/context/AuthContext';
+import ToasterContext from '../app/context/ToasterContext';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
@@ -19,11 +20,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <AOSInit />
-      <body className={inter.className}>
-        <Header />
-        {children}
 
-        <Footer />
+      <body className={inter.className}>
+        <Provider>
+          <ToasterContext />
+          <Header />
+          {children}
+
+          <Footer />
+        </Provider>
       </body>
     </html>
   );

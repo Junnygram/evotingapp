@@ -2,20 +2,52 @@
 
 import Link from 'next/link';
 import React, { useState } from 'react';
+import axios from 'axios';
+import { toast } from 'react-hot-toast';
+import * as yup from 'yup';
+import YupPassword from 'yup-password';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+YupPassword(yup);
+
+const validation = yup.object().shape({
+  name: yup.string().required(),
+  matric: yup
+    .string()
+    .min(4, 'must be at least 4 characters long')
+    .email()
+    .required(),
+  email: yup.string().email().required(),
+  password: yup.string().password(),
+  // confirmPassword: yup
+  //   .string()
+  //   .oneOf([yup.ref("password"), null], "Passwords must match"),
+});
 
 const SignUp = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [name, setName] = useState('');
-  const [matric, setMatric] = useState('');
+  const [data, setData] = useState({
+    name: '',
+    email: '',
+    matric: '',
+    password: '',
+  });
+
+  const {
+    handleSubmit,
+    register,
+    formState: { errors, isSubmitting },
+  } = useForm({
+    resolver: yupResolver(validation),
+    mode: 'all',
+  });
 
   const registerUser = async (e: any) => {
     e.preventDefault();
-    fetch('http://localhost:3000/api/register', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password, name, matric }),
-    });
+    axios
+      .post('/api/register', data)
+      .then(() => toast.success('User has been registered!'))
+
+      .catch(() => toast.error('Something went wrong!'));
   };
   return (
     <div className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden">
@@ -23,6 +55,7 @@ const SignUp = () => {
         <h1 className="text-3xl font-bold text-center text-green-400">
           Register To Vote
         </h1>
+        {/* <form className="mt-6" onSubmit={handleSubmit(registerUser)}> */}
         <form className="mt-6" onSubmit={registerUser}>
           <div className="mb-4">
             <label
@@ -36,8 +69,8 @@ const SignUp = () => {
               name="name"
               autoComplete="name"
               required
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              value={data.name}
+              onChange={(e) => setData({ ...data, name: e.target.value })}
               type="name"
               className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
             />
@@ -55,8 +88,8 @@ const SignUp = () => {
               type="number"
               autoComplete="matric"
               required
-              value={matric}
-              onChange={(e) => setMatric(e.target.value)}
+              value={data.matric}
+              onChange={(e) => setData({ ...data, matric: e.target.value })}
               className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
             />
           </div>
@@ -73,8 +106,8 @@ const SignUp = () => {
               type="email"
               autoComplete="email"
               required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={data.email}
+              onChange={(e) => setData({ ...data, email: e.target.value })}
               className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
             />
           </div>
@@ -91,8 +124,8 @@ const SignUp = () => {
               type="password"
               autoComplete="current-password"
               required
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              value={data.password}
+              onChange={(e) => setData({ ...data, password: e.target.value })}
               className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
             />
           </div>

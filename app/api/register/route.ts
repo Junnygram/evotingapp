@@ -6,7 +6,8 @@ const prisma = new PrismaClient();
 
 export async function POST(req: Request) {
   try {
-    const { name, matric, email, password } = (await req.json()) as {
+    const body = await req.json();
+    const { name, matric, email, password } = body as {
       name: string;
       matric: string;
       email: string;
