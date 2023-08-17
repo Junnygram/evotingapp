@@ -45,7 +45,7 @@ export const authOptions = {
         });
 
         // if no user was found
-        if (!user || !user?.hashedPassword) {
+        if (!user) {
           throw new Error('No user found');
         }
 
@@ -54,8 +54,6 @@ export const authOptions = {
           credentials.password,
           user.hashedPassword
         );
-
-        // if password does not match
         if (!passwordMatch) {
           throw new Error('Incorrect password');
         }
@@ -65,31 +63,6 @@ export const authOptions = {
     }),
   ],
   secret: process.env.NEXTAUTH_SECRET,
-  // callbacks: {
-  //   session: ({ session, token }) => {
-  //     console.log('Session Callback', { session, token });
-  //     return {
-  //       ...session,
-  //       user: {
-  //         ...session.user,
-  //         id: token.id,
-  //         randomKey: token.randomKey,
-  //       },
-  //     };
-  //   },
-  //   jwt: ({ token, user }) => {
-  //     console.log('JWT Callback', { token, user });
-  //     if (user) {
-  //       const u = user;
-  //       return {
-  //         ...token,
-  //         id: u.id,
-  //         randomKey: u.randomKey,
-  //       };
-  //     }
-  //     return token;
-  //   },
-  // },
 };
 const handler = NextAuth(authOptions);
 export { handler as GET, handler as POST };

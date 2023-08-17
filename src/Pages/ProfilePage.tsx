@@ -1,6 +1,5 @@
 import { useSession, signOut } from 'next-auth/react';
 import { getServerSession } from 'next-auth';
-import { authOptions } from '@/app/libs/auth';
 
 export default async function ProfilePage() {
   const { data: session } = useSession();

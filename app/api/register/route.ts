@@ -13,6 +13,7 @@ export async function POST(req: Request) {
       email: string;
       password: string;
     };
+
     if (!name) {
       return new NextResponse('Kindly fill your name', { status: 400 });
     }
