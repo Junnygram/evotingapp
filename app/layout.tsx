@@ -22,7 +22,7 @@ export default function RootLayout({
       <AOSInit />
 
       <body className={inter.className}>
-        <Provider>
+        <Provider session={undefined}>
           <ToasterContext />
           <Header />
           {children}

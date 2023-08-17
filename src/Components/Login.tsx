@@ -5,6 +5,7 @@ import { signIn, useSession } from 'next-auth/react';
 import { toast } from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import axios from 'axios';
 
 const Login = () => {
   const session = useSession();
@@ -14,23 +15,19 @@ const Login = () => {
     password: '',
   });
 
-  useEffect(() => {
-    if (session?.status === 'authenticated') {
-      router.push('/dashboard');
-    }
-  });
+  // useEffect(() => {
+  //   if (session?.status === 'authenticated') {
+  //     router.push('/profile');
+  //   }
+  // });
 
   const loginUser = async (e: any) => {
     e.preventDefault();
-    signIn('credentials', { ...data, redirect: false }).then((callback) => {
-      if (callback?.error) {
-        toast.error(callback.error);
-      }
-
-      if (callback?.ok && !callback?.error) {
-        toast.success('Logged in successfully!');
-      }
+    signIn('credentials', {
+      ...data,
+      redirect: false,
     });
+    router.push('/profile');
   };
   return (
     <div className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden">
@@ -38,13 +35,13 @@ const Login = () => {
         <h1 className="text-3xl font-bold text-center text-green-400">
           Welcome Back
         </h1>
-        <form className="mt-6">
+        <form className="mt-6" onSubmit={loginUser}>
           <div className="mb-4">
             <label
               htmlFor="number"
               className="block text-sm font-medium text-gray-800"
             >
-              Matric Number
+              Email
             </label>
             <input
               type="tel"
@@ -71,11 +68,12 @@ const Login = () => {
             Forget Password?
           </Link>
           <div className="mt-2">
-            <Link href="/candidates">
-              <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-black rounded-md hover:bg-[#d8a642] focus:outline-none focus:bg-gray-600">
-                Login
-              </button>
-            </Link>
+            <button
+              type="submit"
+              className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-black rounded-md hover:bg-[#d8a642] focus:outline-none focus:bg-gray-600"
+            >
+              Login
+            </button>
           </div>
         </form>
 
@@ -121,7 +119,7 @@ const Login = () => {
         <p className="mt-4 text-sm text-center text-gray-700">
           Dont have an account?{' '}
           <Link
-            href="/signup"
+            href="/register"
             className="font-medium text-green-400 hover:underline"
           >
             Sign up
@@ -132,3 +130,14 @@ const Login = () => {
   );
 };
 export default Login;
+
+// signIn('credentials', { ...data, redirect: false }).then((callback) => {
+//   if (callback?.error) {
+//     toast.error(callback.error);
+//   }
+
+//   if (callback?.ok && !callback?.error) {
+//     toast.success('Logged in successfully!');
+//     router.push('/profile');
+//   }
+// });

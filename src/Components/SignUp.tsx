@@ -8,6 +8,8 @@ import * as yup from 'yup';
 import YupPassword from 'yup-password';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { headers } from 'next/dist/client/components/headers';
+import { useRouter } from 'next/navigation';
 YupPassword(yup);
 
 const validation = yup.object().shape({
@@ -25,6 +27,7 @@ const validation = yup.object().shape({
 });
 
 const SignUp = () => {
+  const router = useRouter();
   const [data, setData] = useState({
     name: '',
     email: '',
@@ -32,22 +35,37 @@ const SignUp = () => {
     password: '',
   });
 
-  const {
-    handleSubmit,
-    register,
-    formState: { errors, isSubmitting },
-  } = useForm({
-    resolver: yupResolver(validation),
-    mode: 'all',
-  });
+  // const {
+  //   handleSubmit,
+  //   register,
+  //   formState: { errors, isSubmitting },
+  // } = useForm({
+  //   resolver: yupResolver(validation),
+  //   mode: 'all',
+  // });
 
   const registerUser = async (e: any) => {
     e.preventDefault();
-    axios
-      .post('/api/register', data)
-      .then(() => toast.success('User has been registered!'))
-
-      .catch(() => toast.error('Something went wrong!'));
+    try {
+      const response = await fetch('/api/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ data }),
+      });
+      if (response.ok) {
+        const userInfo = await response.json();
+        console.log(userInfo);
+        toast.success('You have successfully created an account');
+        router.push('/login');
+      } else {
+        const errorMessage = await response.text();
+        toast.error(errorMessage); // Display the error message as a toast
+      }
+    } catch (error) {
+      console.error('An error occurred:', error);
+    }
   };
   return (
     <div className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden">
